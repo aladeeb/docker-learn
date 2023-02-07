@@ -32,7 +32,8 @@ Docker notes.
 - `docker exec -it containerid command`: runs interactive shell for a specific container. like docker exec -it containerid bash, opens a bash session.
 - `docker container rm containerid`: removes the container, we can pass the first three letters of the container name. 
 - `docker image rm imagename`: removes the image locally. 
-- `docker history imagename`: gets the history/details of the image layers.
+- `docker history imagename`: gets the history/details of the image layers. 
+- `docker tag sourceimage:!tag targetimage:!tag`: create a tag target_image that refers to source_image.
 
 
 
