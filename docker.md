@@ -36,6 +36,7 @@ Docker notes.
 - `docker tag sourceimage:!tag targetimage:!tag`: create a tag target_image that refers to source_image.
 - `docker push imagename`: push the image to the dockerhub.
 - `docker login`: sets the dockerhub credentials to be able to pull/push from and to private repos.
+- `docker logout`: logs out.
 
 
 
