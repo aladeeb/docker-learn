@@ -16,7 +16,7 @@ Docker notes.
 ### Commands:
 - `docker version`: shows the details of docker components.
 - `docker info`: gets an overview of the docker client/server.
-- `docker images`: list all the local images.
+- `docker images` or `docker image ls`: list all the local images.
 - `docker pull imagename:version`: pulls image from dockerhub.
  - `docker image inspect imagename`: shows the details of the image.
 - `docker run [OPTIONS] imagename:version`: runs a specific image from the local images, and if the image doesn't exist locally, it pulls it first from the dockerhub.
@@ -34,6 +34,8 @@ Docker notes.
 - `docker image rm imagename`: removes the image locally. 
 - `docker history imagename`: gets the history/details of the image layers. 
 - `docker tag sourceimage:!tag targetimage:!tag`: create a tag target_image that refers to source_image.
+- `docker push imagename`: push the image to the dockerhub.
+- `docker login`: sets the dockerhub credentials to be able to pull/push from and to private repos.
 
 
 
