@@ -16,6 +16,7 @@ Docker notes.
 ### Commands:
 - `docker version`: shows the details of docker components.
 - `docker info`: gets an overview of the docker client/server.
+- `docker build --tag imagename:version dockerfiledirectory`: build a new image.
 - `docker images` or `docker image ls`: list all the local images.
 - `docker pull imagename:version`: pulls image from dockerhub.
  - `docker image inspect imagename`: shows the details of the image.
@@ -36,7 +37,7 @@ Docker notes.
 - `docker tag sourceimage:!tag targetimage:!tag`: create a tag target_image that refers to source_image.
 - `docker push imagename`: push the image to the dockerhub.
 - `docker login`: sets the dockerhub credentials to be able to pull/push from and to private repos.
-- `docker logout`: logs out.
+- `docker logout`: logs out. 
 
 
 
