@@ -24,6 +24,8 @@ Docker notes.
   - `-d`: runs the container in detached mode. -d equals --detach
   - `-p port:port`: defines the container with a specific port mapping. -p equals --publish
   - `--name`: defines the container name.
+  - `-v volumename/bindpath:destination`: defines a friendly name for the volume.
+  - `-e`: passing environment variables.
 - `docker ps -all` or `docker container ls -all`: list all the containers. 
 - `docker stats containerid`: gets the resources consumption for a specific container.
 - `docker container stop containerid`: stops a container.
@@ -38,14 +40,20 @@ Docker notes.
 - `docker push imagename`: push the image to the dockerhub.
 - `docker login`: sets the dockerhub credentials to be able to pull/push from and to private repos.
 - `docker logout`: logs out. 
+- `docker volume ls`: list all volumes.
 
+---
+
+### Storage:
+there are different types of storage: 
+- Volumes 
+- Mount points 
+- tmpfs
 
 
 ---
 ## Popular Images:
 - alpine -> lightweight linux image
 - nginx -> webserver/proxy
-- redis -> caching
-
-
-
+- redis -> caching/in-memory database
+- mariadb -> database
