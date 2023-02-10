@@ -20,7 +20,7 @@ Docker notes.
 - `docker logout`: logs out. 
 
 ---
-## Images:
+## Images
 
 ### Commands:
 - `docker build --tag imagename:version dockerfiledirectory`: build a new image.
@@ -84,6 +84,10 @@ types of networks:
   - `--subnet 172.120.0.0/16`: defines the subnet of the network.
 - `docker network disconnect [OPTIONS] networkname containername`: disconnects a container from the network.
 - `docker network connect [OPTIONS] networkname containername`: connects a container from the network.
+---
+## Docker Compose
+
+### Commands:
 
 ---
 ## Popular Images:
