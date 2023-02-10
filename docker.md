@@ -2,7 +2,7 @@
 Docker notes. 
 
 ---
-## Architecture:
+## Architecture
 ### Docker Components:
 - Images -> set of instructions to build the container configuration.
 - Containers -> the running image.
@@ -12,14 +12,30 @@ Docker notes.
 - Namespaces -> isolate containers' resources from each other.
    
 ---
-## Cheatsheet:
+## Docker CLI
 ### Commands:
 - `docker version`: shows the details of docker components.
 - `docker info`: gets an overview of the docker client/server.
+- `docker login`: sets the dockerhub credentials to be able to pull/push from and to private repos.
+- `docker logout`: logs out. 
+
+---
+## Images:
+
+### Commands:
 - `docker build --tag imagename:version dockerfiledirectory`: build a new image.
 - `docker images` or `docker image ls`: list all the local images.
 - `docker pull imagename:version`: pulls image from dockerhub.
  - `docker image inspect imagename`: shows the details of the image.
+- `docker image rm imagename`: removes the image locally. 
+- `docker history imagename`: gets the history/details of the image layers. 
+- `docker tag sourceimage:!tag targetimage:!tag`: create a tag target_image that refers to source_image.
+- `docker push imagename`: push the image to the dockerhub.
+
+---
+## Containers
+
+### Commands:
 - `docker run [OPTIONS] imagename:version`: runs a specific image from the local images, and if the image doesn't exist locally, it pulls it first from the dockerhub.
   - `-d`: runs the container in detached mode. -d equals --detach
   - `-p port:port`: defines the container with a specific port mapping. -p equals --publish
@@ -35,31 +51,25 @@ Docker notes.
 - `docker logs containerid`: gets the logs from the container.
 - `docker exec -it containerid command`: runs interactive shell for a specific container. like docker exec -it containerid bash, opens a bash session.
 - `docker container rm containerid`: removes the container, we can pass the first three letters of the container name. 
-- `docker image rm imagename`: removes the image locally. 
-- `docker history imagename`: gets the history/details of the image layers. 
-- `docker tag sourceimage:!tag targetimage:!tag`: create a tag target_image that refers to source_image.
-- `docker push imagename`: push the image to the dockerhub.
-- `docker login`: sets the dockerhub credentials to be able to pull/push from and to private repos.
-- `docker logout`: logs out. 
-- `docker volume ls`: list all volumes.
-- `docker network ls`: list all networks.
-- `docker network inspect networkname`: gets the details of the network and its attached containers.
-- `docker network create --driver drivername networkname`: creates a network.
-  - `--subnet 172.120.0.0/16`: defines the subnet of the network.
-- `docker network disconnect [options] networkname containername`: disconnects a container from the network.
-- `docker network connect [options] networkname containername`: connects a container from the network.
-
 ---
 
-## Storage:
+## Storage
 there are different types of storage: 
 - Volumes 
 - Mount points 
 - tmpfs
 
+### Commands:
+- `docker volume ls`: list all volumes.
+
+### Examples:
+Attaching a volume while running a container
+```
+docker run -it -d -v myvolume:/mounted_folder alpine
+```
 ---
 
-## Networking:
+## Networking
 types of networks:
 - Bridge network: the default internal network for docker. Only containers inside the same network can see each other.
 - Host: The host machine network, this is allowing containers to see each other.
@@ -67,6 +77,13 @@ types of networks:
 - Overlay
 - Macvlan
 
+### Commands:
+- `docker network ls`: list all networks.
+- `docker network inspect networkname`: gets the details of the network and its attached containers.
+- `docker network create --driver drivername networkname`: creates a network.
+  - `--subnet 172.120.0.0/16`: defines the subnet of the network.
+- `docker network disconnect [OPTIONS] networkname containername`: disconnects a container from the network.
+- `docker network connect [OPTIONS] networkname containername`: connects a container from the network.
 
 ---
 ## Popular Images:
