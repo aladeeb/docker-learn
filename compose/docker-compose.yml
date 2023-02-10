@@ -1,0 +1,40 @@
+version: "3"
+
+services:
+  app-db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: wp_db
+      MYSQL_USER: wp_user
+      MYSQL_PASSWORD: 12345
+    volumes:
+      - db:/var/lib/mysql
+  app-server:
+    depends_on: 
+      - app-db
+    image: wordpress
+    restart: always
+    ports:
+      - 9000:80
+    environment:
+      WORDPRESS_DB_HOST: app-db
+      WORDPRESS_DB_USER: wp_user
+      WORDPRESS_DB_PASSWORD: 12345
+      WORDPRESS_DB_NAME: wp_db
+    volumes:
+      - ./wordpress:/var/www/html
+  phpmyadmin:
+    depends_on: 
+      - app-db
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 9001:80
+    environment:
+      PMA_HOST: app-db
+      # PMA_ARBITRARY: 1
+      MYSQL_ROOT_PASSWORD: 12345
+volumes:
+  db:
