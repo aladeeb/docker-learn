@@ -26,6 +26,7 @@ Docker notes.
   - `--name`: defines the container name.
   - `-v volumename/bindpath:destination`: defines a friendly name for the volume.
   - `-e`: passing environment variables.
+  - `--network`: defines the network of the container.
 - `docker ps -all` or `docker container ls -all`: list all the containers. 
 - `docker stats containerid`: gets the resources consumption for a specific container.
 - `docker container stop containerid`: stops a container.
@@ -41,14 +42,30 @@ Docker notes.
 - `docker login`: sets the dockerhub credentials to be able to pull/push from and to private repos.
 - `docker logout`: logs out. 
 - `docker volume ls`: list all volumes.
+- `docker network ls`: list all networks.
+- `docker network inspect networkname`: gets the details of the network and its attached containers.
+- `docker network create --driver drivername networkname`: creates a network.
+  - `--subnet 172.120.0.0/16`: defines the subnet of the network.
+- `docker network disconnect [options] networkname containername`: disconnects a container from the network.
+- `docker network connect [options] networkname containername`: connects a container from the network.
 
 ---
 
-### Storage:
+## Storage:
 there are different types of storage: 
 - Volumes 
 - Mount points 
 - tmpfs
+
+---
+
+## Networking:
+types of networks:
+- Bridge network: the default internal network for docker. Only containers inside the same network can see each other.
+- Host: The host machine network, this is allowing containers to see each other.
+- None: Isolation of the container, will not be published or even accessible by the other containers. 
+- Overlay
+- Macvlan
 
 
 ---
