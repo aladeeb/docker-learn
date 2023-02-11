@@ -32,6 +32,16 @@ Docker notes.
 - `docker tag sourceimage:!tag targetimage:!tag`: create a tag target_image that refers to source_image.
 - `docker push imagename`: push the image to the dockerhub.
 
+### Examples:
+Saving an image as tar file.
+```
+docker save my-app:1.0 > my-app.tar
+```
+
+Loading an image from tar file.
+```
+docker load -i /home/ubuntu/my-app.tar
+```
 ---
 ## Containers
 
@@ -88,7 +98,7 @@ types of networks:
 ## Docker Compose
 
 ### Commands:
-
+- `docker compose build`: rebuild the image/s if there's a change done on it.
 ---
 ## Popular Images:
 - alpine -> lightweight linux image
