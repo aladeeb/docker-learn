@@ -60,6 +60,7 @@ docker load -i /home/ubuntu/my-app.tar
   - `-p port:port`: defines the container with a specific port mapping. -p equals --publish
   - `--name`: defines the container name.
   - `-v volumename/bindpath:destination`: defines a friendly name for the volume.
+  - `--mount type=volume/bind/tmpfs,source=/data/myfolder,target=/var/lib/mysql`: better option to add a volume or bind a directory.
   - `-e`: passing environment variables.
   - `--cpus`: allocates a specific cpu.
   - `--memory`: allocates a specific memory.
