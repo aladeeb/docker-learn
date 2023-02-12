@@ -100,8 +100,19 @@ types of networks:
 ### Commands:
 - `docker compose build`: rebuild the image/s if there's a change done on it.
 ---
+## Tips and Tricks
+
+To stop all the running containers, use the below: (the same goes for the remove)
+```
+docker container stop $(docker container ps)
+```
+
+
+---
+
 ## Popular Images:
 - alpine -> lightweight linux image
 - nginx -> webserver/proxy
 - redis -> caching/in-memory database
 - mariadb -> database
+- timer -> prints timestamp every second
