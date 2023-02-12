@@ -10,7 +10,16 @@ Docker notes.
 - Client -> the CLI tool.
 - Daemon -> takes the commands from the client and apply it on the runc.
 - Namespaces -> isolate containers' resources from each other.
-   
+
+### Docker Engine:
+- Docker CLI
+- REST API
+- Docker Daemon
+
+Running a container on a remote docker engine:
+```
+docker -H=remote-docker-engine-ip:2375 run -d nginx
+```
 ---
 ## Docker CLI
 ### Commands:
@@ -52,6 +61,8 @@ docker load -i /home/ubuntu/my-app.tar
   - `--name`: defines the container name.
   - `-v volumename/bindpath:destination`: defines a friendly name for the volume.
   - `-e`: passing environment variables.
+  - `--cpus`: allocates a specific cpu.
+  - `--memory`: allocates a specific memory.
   - `--network`: defines the network of the container.
   - `--link containername`: links the container with another
 - `docker ps -all` or `docker container ls -all`: list all the containers. 
