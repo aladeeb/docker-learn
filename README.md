@@ -59,6 +59,7 @@ docker load -i /home/ubuntu/my-app.tar
   - `-d`: runs the container in detached mode. -d equals --detach
   - `-p port:port`: defines the container with a specific port mapping. -p equals --publish
   - `--name`: defines the container name.
+  - `--restart`: defines how the container will act in case of failure.
   - `-v volumename/bindpath:destination`: defines a friendly name for the volume.
   - `--mount type=volume/bind/tmpfs,source=/data/myfolder,target=/var/lib/mysql`: better option to add a volume or bind a directory.
   - `-e`: passing environment variables.
