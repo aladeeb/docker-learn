@@ -68,6 +68,7 @@ docker load -i /home/ubuntu/my-app.tar
   - `--network`: defines the network of the container.
   - `--link containername`: links the container with another
 - `docker ps -all` or `docker container ls -all`: list all the containers. 
+- 
 - `docker stats containerid`: gets the resources consumption for a specific container.
 - `docker container stop containerid`: stops a container.
 - `docker container stop containerid`: starts a container.
