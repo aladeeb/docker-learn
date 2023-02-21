@@ -130,4 +130,12 @@ docker container stop $(docker container ps)
 - nginx -> webserver/proxy
 - redis -> caching/in-memory database
 - mariadb -> database
-- timer -> prints timestamp every second
+- timer -> prints timestamp every second---
+
+---
+
+## Orchestration Tools:
+- Docker Swarm
+- Kubernetes
+- Mesos
+- Openshift
